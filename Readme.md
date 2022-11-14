@@ -19,8 +19,6 @@ There are also options to execute using the suite tags
 ```sh
 $ cd /project/Directory
 
-$ mvn clean verify -Dtag@smokeTest -> To execute everything
-
 $ mvn clean verify -Dtag@loginTest -> to execute login tests only
 $ mvn clean verify -Dtag@purchaseTest -> to execute purchase tests only
 ```
@@ -39,9 +37,9 @@ $ mvn clean verify -Dtag@purchaseTest -> to execute purchase tests only
 
 ## Screenshots
 
-![Screenshot](url.png)
+![Screenshot](https://raw.githubusercontent.com/moisesGlb/AT_Excercise/main/Screenshots/reports.png)
 
-![Screenshot](url.png)
+![Screenshot](https://raw.githubusercontent.com/moisesGlb/AT_Excercise/main/Screenshots/reports2.png)
 
 
 
