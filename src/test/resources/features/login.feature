@@ -19,7 +19,7 @@ Feature: Login And Registration Scenarios
     Examples:
       | email           | password | security_answer |
       | moises@test.com | Test1234 | mother          |
-      | moises@change11.com | Test1234 | mother          |
+      | moises@change.com | Test1234 | mother          |
 
   @test2
   Scenario: Login with valid credentials
