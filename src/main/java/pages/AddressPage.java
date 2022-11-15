@@ -35,7 +35,7 @@ public class AddressPage extends PageObject {
     }
 
     public void clickBtnProceed2Payment(){
-        clickWithRetryOnSomeElement(proceed2PaymentBtn);
+        clickWithRetryOnSomeElement(proceed2PaymentBtn,4000);
         //proceed2PaymentBtn.click();
     }
 

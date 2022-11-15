@@ -77,6 +77,7 @@ public class BasketPage extends PageObject {
     }
 
     public void clickCheckoutBtn(){
+
         clickWithRetryOnSomeElement(checkoutBtn,2500);
         //checkoutBtn.click();
     }

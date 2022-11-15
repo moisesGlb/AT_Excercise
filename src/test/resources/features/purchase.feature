@@ -4,7 +4,7 @@ Feature: Purchase And Basket Scenarios
   Background: User is logged in
     Given a customer navigates to the home page of OWASP Juice Shop
     When the customer navigates to the login page
-    And the customer input the user "moises.salas@test2.com"
+    And the customer input the user "moises@test11.com"
     And the customer input the password "Test1234"
     And the customer click on the Login button
     Then the Home Page should be displayed

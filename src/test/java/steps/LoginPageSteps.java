@@ -1,7 +1,6 @@
 package steps;
 
 import io.cucumber.java.en.And;
-import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import org.fluentlenium.core.annotation.Page;
 import org.junit.Assert;
@@ -41,7 +40,7 @@ public class LoginPageSteps {
 
     @And("The customer answer the security question: {string}")
     public void theCustomerAnswerThe(String answer) {
-        loginPage.enterSequrityAnser(answer);
+        loginPage.enterSecurityAnswer(answer);
     }
 
     @And("the customer enter the {string}")
@@ -57,5 +56,10 @@ public class LoginPageSteps {
     @And("the customer click on Not yet a customer link")
     public void theCustomerClickOnNotYetACustomerLink() {
         loginPage.clickRegisterLink();
+    }
+
+    @Then("the page should show a success message {string}")
+    public void thePageShouldShowASuccessMessage(String message) {
+        Assert.assertEquals(loginPage.getSuccessMsgChangePassword(),message);
     }
 }

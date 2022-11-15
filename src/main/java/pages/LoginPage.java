@@ -4,7 +4,8 @@ import net.serenitybdd.core.annotations.findby.FindBy;
 import net.serenitybdd.core.pages.PageObject;
 import net.serenitybdd.core.pages.WebElementFacade;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-import resources.GlobalConfig;
+
+import static resources.Utilities.waitAndTryOnSomeElement;
 
 public class LoginPage extends PageObject {
 
@@ -28,12 +29,15 @@ public class LoginPage extends PageObject {
     @FindBy(xpath = "(//a)[9]")
     private WebElementFacade forgotYourPassLink;
 
+    @FindBy(xpath = "//div[@class='confirmation']")
+    private WebElementFacade successMsgChangePassword;
+
     //----------------------- Forgot Password Locators -----------------------\\
 
     //the email shares the same uniqueID that the one in the login page, we reuse the email web element defined above
 
     @FindBy(id = "securityAnswer")
-    private WebElementFacade sequrityQuestionInput;
+    private WebElementFacade securityQuestionInput;
 
     @FindBy(id = "newPassword")
     private WebElementFacade newPasswordInput;
@@ -75,8 +79,9 @@ public class LoginPage extends PageObject {
 
     //----------------------- Forgot Password Methods -----------------------\\
 
-    public void enterSequrityAnser(String answer){
-        sequrityQuestionInput.sendKeys(answer);
+    public void enterSecurityAnswer(String answer){
+        waitFor(ExpectedConditions.elementToBeClickable(securityQuestionInput));
+        securityQuestionInput.sendKeys(answer);
     }
 
     public void enterNewPassword(String password){
@@ -85,9 +90,11 @@ public class LoginPage extends PageObject {
     }
 
     public void clickChangePassBtn(){
-        waitFor(ExpectedConditions.elementToBeClickable(changePasswordBtn));
-        changePasswordBtn.click();
+        waitAndTryOnSomeElement(changePasswordBtn,3000);
     }
 
-
+    public String getSuccessMsgChangePassword(){
+        waitFor(ExpectedConditions.visibilityOf(successMsgChangePassword));
+        return successMsgChangePassword.getText();
+    }
 }

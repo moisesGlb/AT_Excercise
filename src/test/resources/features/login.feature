@@ -17,14 +17,15 @@ Feature: Login And Registration Scenarios
     And the customer click on the Login button
     Then the Home Page should be displayed
     Examples:
-      | email                         | password | security_answer |
-      | moises.salas@test2.com | Test1234 | mother          |
+      | email           | password | security_answer |
+      | moises@test11.com | Test1234 | mother          |
+      | moises@change11.com | Test1234 | mother          |
 
   @test2
   Scenario: Login with valid credentials
     Given a customer navigates to the home page of OWASP Juice Shop
     When the customer navigates to the login page
-    And the customer input the user "moises.salas@test2.com"
+    And the customer input the user "moises@test11.com"
     And the customer input the password "Test1234"
     And the customer click on the Login button
     Then the Home Page should be displayed
@@ -50,10 +51,7 @@ Feature: Login And Registration Scenarios
     And The customer answer the security question: "<security_answer>"
     And the customer enter the "<new_password>"
     And the customer click on the change Button
-    And the customer input the user "<email>"
-    And the customer input the password "<new_password>"
-    And the customer click on the Login button
-    Then the Home Page should be displayed
+    Then the page should show a success message "Your password was successfully changed."
     Examples:
-      | email               | security_answer | new_password |
-      | moises.salas@agilethought.com | mother | Test1234    |
+      | email             | security_answer | new_password |
+      | moises@change11.com | mother          | NewPass1234  |
