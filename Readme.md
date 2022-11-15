@@ -2,7 +2,7 @@
 
 ## Description
 
-This Repo is part of a technical challenge, it works with the [heroku app shop](https://juice-shop.herokuapp.com). The main idea is to create a small smoke test suite with a few login tests and also a few Purchase test. The repo has automatic reports. It works with Serenity, bdd and cucumber. For a report example go to the test-output folder
+This Repo is part of a technical challenge, it works with the [heroku app shop](https://juice-shop.herokuapp.com). The main idea is to create a small smoke test suite with a few login tests and also a few Purchase test. The repo has automatic reports. It works with Serenity, bdd and cucumber. 
 
 ## Execute
 
